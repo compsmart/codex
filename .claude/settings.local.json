@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "WebSearch",
+      "Bash(evo:*)",
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(ls:*)",
+      "Read(//c/Users/brad/.evo/**)",
+      "Bash(curl:*)",
+      "Bash(timeout 5 evo:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,85 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evo-ai"
+dynamic = ["version"]
+description = "A cutting-edge AI assistant with persistent learning capabilities"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = ["ai", "assistant", "learning", "mcp", "llm"]
+authors = [
+    { name = "Evo AI", email = "dev@evo-ai.com" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "ollama>=0.3.0",
+    "aiosqlite>=0.20.0",
+    "pydantic>=2.5.0",
+    "rich>=13.7.0",
+    "typer>=0.9.0",
+    "httpx>=0.25.0",
+    "numpy>=1.24.0",
+    "sentence-transformers>=2.2.0",
+    "torch>=2.1.0",
+    "transformers>=4.36.0",
+    "peft>=0.7.0",
+    "bitsandbytes>=0.41.0",
+    "trl>=0.7.0",
+    "datasets>=2.14.0",
+    "accelerate>=0.24.0",
+    "mcp>=1.0.0",
+    "asyncio-mqtt>=0.16.0",
+    "watchfiles>=0.21.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.9.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+    "mypy>=1.6.0",
+    "pre-commit>=3.5.0",
+]
+
+[project.scripts]
+evo = "evo.cli:main"
+
+[project.urls]
+Documentation = "https://github.com/evo-ai/evo-ai#readme"
+Issues = "https://github.com/evo-ai/evo-ai/issues"
+Source = "https://github.com/evo-ai/evo-ai"
+
+[tool.hatch.version]
+path = "src/evo/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/evo"]
+
+[tool.black]
+target-version = ["py39"]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

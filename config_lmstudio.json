@@ -1,0 +1,60 @@
+{
+  "model_name": "llama3.2",
+  "model_url": "http://127.0.0.1:1234",
+  "model_type": "openai_compatible",
+  "api_key": "lm-studio",
+  "temperature": 0.7,
+  "max_tokens": 4096,
+  "top_p": 0.9,
+  "top_k": 50,
+  "use_memory": true,
+  "enable_learning": true,
+  "enable_mcp": false,
+  "database_path": "~/.evo/memory.db",
+  "sessions_dir": "~/.evo/sessions",
+  "system_prompt": "You are Evo, an AI assistant that learns and remembers. You can access your memory to recall past conversations and learned facts. When you don't know something, you can search for information using available tools.",
+  "max_context_length": 8192,
+  "context_window_overlap": 512,
+  "personality_traits": {
+    "curiosity": 0.8,
+    "helpfulness": 0.9,
+    "creativity": 0.7,
+    "analytical": 0.8,
+    "empathy": 0.6
+  },
+  "memory": {
+    "embedding_model": "all-MiniLM-L6-v2",
+    "max_episodic_memories": 10000,
+    "consolidation_interval_hours": 12,
+    "importance_threshold": 0.3,
+    "enable_vector_search": true
+  },
+  "learning": {
+    "enabled": true,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "learning_rate": 0.0001,
+    "batch_size": 4,
+    "max_length": 2048,
+    "training_interval_hours": 6,
+    "min_data_points": 10,
+    "importance_threshold": 0.5,
+    "adapter_save_path": "~/.evo/adapters",
+    "consolidation_interval": 3600
+  },
+  "mcp": {
+    "enabled": false,
+    "timeout": 30.0,
+    "fallback_to_external_llm": false,
+    "servers": []
+  },
+  "cli": {
+    "theme": "dark",
+    "auto_save_sessions": true,
+    "session_timeout": 1800
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "~/.evo/logs/evo.log"
+  }
+}
